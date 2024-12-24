@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build entire project",
+            "command": "D:/mingw64/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                // "${file}",
+                "${fileDirname}\\main.cpp",
+                "${fileDirname}\\player.cpp",
+                "${fileDirname}\\wins.cpp",
+                "-o",
+                "${fileDirname}\\app.exe",
+                // 链接至ncursesw
+                "-I",
+                "D:\\ncurses-windows\\include\\ncursesw",
+                "-L",
+                "D:\\ncurses-windows\\lib",
+                "-l",
+                "ncursesw"
+            ],
+            "options": {
+                "cwd": "D:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: D:/mingw64/bin/g++.exe"
+        }
+    ]
+}
